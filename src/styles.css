@@ -1,0 +1,2100 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #eef4f9 0%, #dde8f2 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 32px 16px 48px;
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.75) 0%,
+      transparent 32%
+    ),
+    linear-gradient(180deg, #eef4f9 0%, #dde8f2 100%);
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* 로그인 헤더 */
+
+.login-header-blue {
+  max-width: 680px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #0b3f6f 0%, #14558f 100%);
+  color: #fff;
+  border-radius: 28px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 18px 36px rgba(11, 63, 111, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.login-header-text {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.header-main {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 4px;
+  letter-spacing: -0.4px;
+}
+
+.header-bottom {
+  font-size: 21px;
+  font-weight: 700;
+  margin-top: 10px;
+  opacity: 0.96;
+}
+
+.login-header-logo-box {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-header-logo {
+  width: 118px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
+  padding: 6px 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.admin-header {
+  background: linear-gradient(135deg, #34495e 0%, #52687d 100%);
+}
+
+/* 카드 공통 */
+
+.card {
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 14px 34px rgba(19, 51, 84, 0.1);
+  padding: 24px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(184, 202, 220, 0.45);
+}
+
+.login-card {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.login-card form {
+  margin-top: 8px;
+}
+
+/* 로그인 타입 선택 */
+
+.login-select-card {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.login-select-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #16324f;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.login-select-subtext {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #6a7f94;
+  line-height: 1.5;
+}
+
+.login-type-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.login-type-card {
+  width: 100%;
+  border: 1px solid #dbe7f1;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #ffffff 0%, #f6fafe 100%);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-align: left;
+}
+
+.login-type-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(21, 74, 120, 0.1);
+  border-color: #bfd4e6;
+}
+
+.login-type-card.worker {
+  background: linear-gradient(180deg, #ffffff 0%, #f3f8fd 100%);
+}
+
+.login-type-card.admin {
+  background: linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
+}
+
+.login-type-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: #eaf3fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex: 0 0 auto;
+}
+
+.login-type-card.admin .login-type-icon {
+  background: #edf1f5;
+}
+
+.login-type-text-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.login-type-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #16324f;
+  margin-bottom: 4px;
+}
+
+.login-type-desc {
+  font-size: 13px;
+  color: #678096;
+  line-height: 1.45;
+}
+
+.back-btn {
+  border: none;
+  background: transparent;
+  color: #35516a;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.login-mode-subtext {
+  margin-bottom: 10px;
+}
+
+/* 상단 카드 */
+
+.top-card {
+  padding: 14px 14px 16px;
+  border-radius: 24px;
+}
+
+.top-card-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.top-logo-box.left-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.top-logo {
+  width: 48px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.top-title-area.compact {
+  flex: 1;
+  min-width: 0;
+}
+
+.top-title-area.compact h1 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #16324f;
+  line-height: 1.2;
+}
+
+.top-title-area.compact .sub-text {
+  margin: 0;
+  font-size: 11px;
+  color: #60758a;
+  line-height: 1.3;
+}
+
+.top-button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.top-button-grid .tab-btn,
+.top-button-grid .outline-btn {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 10px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* 관리자 상단 */
+
+.admin-container {
+  max-width: 860px;
+}
+
+.admin-top-card {
+  padding: 14px 14px 16px;
+  border-radius: 24px;
+}
+
+.admin-top-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-top-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-top-logo-box {
+  flex: 0 0 auto;
+}
+
+.admin-top-logo {
+  width: 46px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.admin-top-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #16324f;
+  line-height: 1.2;
+}
+
+.admin-top-button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.admin-top-button-grid .tab-btn,
+.admin-top-button-grid .outline-btn {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 10px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* 관리자 메뉴 카드 */
+
+.admin-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 14px;
+  margin-top: 10px;
+}
+
+.admin-menu-card {
+  min-height: 128px;
+  border-radius: 18px;
+  border: 2px solid #d8e2ec;
+  background: #f9fbfd;
+  color: #16324f;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+.admin-menu-card:hover {
+  background: #f2f7fb;
+  border-color: #c2d7e8;
+}
+
+.admin-menu-card.active {
+  background: #edf4fb;
+  border-color: #b9d3ea;
+}
+
+/* 공통 텍스트/입력 */
+
+.sub-text {
+  margin: 0;
+  color: #60758a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.label {
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #24435e;
+}
+
+.input,
+.month-select {
+  width: 100%;
+  border: 1px solid #d3dfeb;
+  border-radius: 16px;
+  background: #fdfefe;
+  padding: 14px 16px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.input:focus,
+.month-select:focus {
+  border-color: #14558f;
+  box-shadow: 0 0 0 4px rgba(20, 85, 143, 0.1);
+}
+
+/* 체크박스 */
+
+.login-check-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.check-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #35516a;
+  cursor: pointer;
+}
+
+.check-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #1564a8;
+  cursor: pointer;
+}
+
+/* 버튼 */
+
+.primary-btn,
+.outline-btn,
+.tab-btn,
+.policy-toggle-btn {
+  border-radius: 16px;
+  padding: 14px 18px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.primary-btn {
+  width: 100%;
+  margin-top: 16px;
+  background: linear-gradient(135deg, #0d4b82 0%, #1564a8 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 18px rgba(13, 75, 130, 0.2);
+  font-size: 15px;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 22px rgba(13, 75, 130, 0.24);
+}
+
+.primary-btn:disabled,
+.outline-btn:disabled,
+.tab-btn:disabled,
+.policy-toggle-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.outline-btn {
+  background: #fff;
+  color: #16324f;
+  border: 2px solid #d6e0ea;
+}
+
+.outline-btn:hover {
+  background: #f7fafc;
+}
+
+.tab-btn {
+  background: #eef4fa;
+  color: #35516a;
+  border: none;
+}
+
+.tab-btn.active {
+  background: #0f4c81;
+  color: #fff;
+}
+
+.policy-toggle-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: #f3f8fc;
+  color: #24435e;
+  border: 1px solid #d7e4ef;
+  font-size: 15px;
+}
+
+.policy-toggle-btn:hover {
+  background: #eaf3f9;
+}
+
+/* 정책 */
+
+.policy-box {
+  margin-top: 12px;
+  border: 1px solid #dbe7f1;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fbfdff 0%, #f4f8fc 100%);
+  padding: 14px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.policy-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #16324f;
+  margin-bottom: 10px;
+}
+
+.policy-section {
+  margin-bottom: 10px;
+}
+
+.policy-section:last-child {
+  margin-bottom: 0;
+}
+
+.policy-section b {
+  display: block;
+  font-size: 13px;
+  color: #24435e;
+  margin-bottom: 4px;
+}
+
+.policy-section p {
+  margin: 0;
+  font-size: 12px;
+  color: #5f7286;
+  line-height: 1.55;
+}
+
+.error-text {
+  margin: 12px 0 0;
+  color: #c62828;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.pin-btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.pin-btn-group .primary-btn,
+.pin-btn-group .outline-btn {
+  width: auto;
+  margin-top: 0;
+}
+
+/* 섹션 헤더 */
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #16324f;
+}
+
+.section-right {
+  min-width: 180px;
+}
+
+.empty-box {
+  border: 1px dashed #c6d5e5;
+  background: #f8fbff;
+  color: #5d7388;
+  border-radius: 14px;
+  padding: 22px 16px;
+  text-align: center;
+}
+
+/* 공수 카드 */
+
+.gongsu-card {
+  overflow: hidden;
+}
+
+.gongsu-topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.gongsu-title-wrap {
+  flex: 1;
+  min-width: 260px;
+}
+
+.gongsu-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #e7f1fb;
+  color: #0f4c81;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.gongsu-title {
+  margin: 0 0 8px;
+  font-size: 26px;
+  color: #16324f;
+}
+
+.gongsu-guide {
+  margin: 0;
+  color: #60758a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.gongsu-control-wrap {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.gongsu-control-wrap .month-select {
+  width: 170px;
+}
+
+.total-box {
+  min-width: 130px;
+  border-radius: 16px;
+  background: #f5f9fd;
+  border: 1px solid #d7e2ee;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.total-label {
+  font-size: 12px;
+  color: #60758a;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.total-value {
+  font-size: 22px;
+  color: #0f4c81;
+  font-weight: 800;
+}
+
+.gongsu-notice {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  background: #f3f8fd;
+  border: 1px solid #dce8f3;
+  color: #56708a;
+  border-radius: 16px;
+  font-size: 13px;
+}
+
+/* 공수 달력 */
+
+.calendar-week-header {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.week-name {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: #3d5871;
+  padding: 8px 0;
+}
+
+.week-name.sun {
+  color: #d32f2f;
+}
+
+.week-name.sat {
+  color: #1976d2;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.calendar-cell {
+  min-height: 70px;
+  border: 1px solid #dce6f0;
+  border-radius: 14px;
+  background: #fff;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-cell.empty {
+  background: #f6f8fb;
+  border: 1px dashed #dce6f0;
+}
+
+.calendar-cell.today {
+  border: 1.5px solid #0f4c81;
+  background: #eef6ff;
+}
+
+.calendar-cell.has-value {
+  box-shadow: inset 0 0 0 1px rgba(15, 76, 129, 0.04);
+}
+
+.calendar-day {
+  font-size: 14px;
+  font-weight: 800;
+  color: #16324f;
+  margin-bottom: 8px;
+}
+
+.calendar-day.sun {
+  color: #d32f2f;
+}
+
+.calendar-day.sat {
+  color: #1976d2;
+}
+
+.calendar-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.calendar-label {
+  font-size: 12px;
+  color: #60758a;
+  font-weight: 700;
+}
+
+.calendar-value {
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.calendar-empty {
+  color: #a0aec0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* 관리자 콘텐츠 */
+
+.admin-content-card {
+  margin-top: 18px;
+  border-radius: 22px;
+}
+
+.admin-content-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #16324f;
+  margin-bottom: 14px;
+}
+
+.admin-filter-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.admin-filter-grid {
+  display: grid;
+  grid-template-columns: 1.2fr auto;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.admin-filter-input {
+  min-width: 0;
+}
+
+.admin-action-btn {
+  width: auto;
+  min-width: 110px;
+  margin-top: 0;
+  padding: 14px 18px;
+}
+
+.admin-result-box {
+  border: 1px dashed #c8d7e6;
+  background: #f8fbff;
+  color: #60758a;
+  border-radius: 16px;
+  padding: 18px 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.admin-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #d7e2ee;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  border-bottom: 1px solid #e1e8ef;
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #24435e;
+  white-space: nowrap;
+}
+
+.admin-table th {
+  background: #eef4fa;
+  font-weight: 800;
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-search-result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.admin-worker-card {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #d7e2ee;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.admin-worker-card:hover {
+  background: #f7fbff;
+  border-color: #bfd4e6;
+}
+
+.admin-worker-card.active {
+  background: #eef6ff;
+  border-color: #9ec3e6;
+}
+
+.admin-worker-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #16324f;
+  margin-bottom: 4px;
+}
+
+.admin-worker-meta {
+  font-size: 13px;
+  color: #6a7f94;
+  line-height: 1.45;
+}
+
+.admin-detail-box {
+  margin-top: 14px;
+  border: 1px solid #d7e2ee;
+  border-radius: 16px;
+  background: #fbfdff;
+  padding: 16px;
+}
+
+.admin-detail-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #16324f;
+  margin-bottom: 8px;
+}
+
+.admin-detail-body {
+  font-size: 14px;
+  color: #60758a;
+  line-height: 1.6;
+}
+
+.admin-payslip-wrap {
+  margin-top: 18px;
+}
+
+.admin-payroll-select-row {
+  margin-top: 10px;
+}
+
+.admin-print-btn-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
+.admin-print-btn {
+  width: auto;
+  min-width: 120px;
+  margin-top: 0;
+}
+
+/* 미니 공수표 */
+
+.payslip-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.mini-calendar-box {
+  width: 100%;
+  margin-bottom: 12px;
+  border: 1px solid #d7e2ee;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fbfdff 0%, #f4f8fc 100%);
+  padding: 12px;
+}
+
+.mini-calendar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mini-calendar-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #16324f;
+}
+
+.mini-calendar-total {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f4c81;
+}
+
+.mini-week-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.mini-week-name {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #34495e;
+  padding: 4px 0;
+}
+
+.mini-week-name.sun {
+  color: #d32f2f;
+}
+
+.mini-week-name.sat {
+  color: #1976d2;
+}
+
+.mini-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.mini-calendar-cell {
+  min-height: 50px;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  background: #fff;
+  padding: 4px 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mini-calendar-cell.empty {
+  background: #f3f6f9;
+  border: 1px dashed #e2e8f0;
+}
+
+.mini-calendar-cell.today {
+  border: 1.5px solid #0f4c81;
+  background: #eef6ff;
+}
+
+.mini-day {
+  font-size: 11px;
+  font-weight: 800;
+  text-align: left;
+  color: #16324f;
+  line-height: 1;
+}
+
+.mini-day.sun {
+  color: #d32f2f;
+}
+
+.mini-day.sat {
+  color: #1976d2;
+}
+
+.mini-value {
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.2;
+  margin-top: 4px;
+  color: #16324f;
+}
+
+/* 급여명세서 */
+
+.payslip-sheet {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #fcfcfd 0%, #f4f6f8 100%);
+  border: 1px solid #cfd8e3;
+  border-radius: 22px;
+  padding: 20px 20px 18px;
+  box-shadow: 0 10px 24px rgba(21, 49, 82, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.payslip-head {
+  position: relative;
+  margin-bottom: 16px;
+  min-height: 68px;
+}
+
+.payslip-head-center {
+  text-align: center;
+  padding: 0 52px;
+}
+
+.payslip-title-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payslip-title {
+  margin: 0 0 6px;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #123f73;
+  letter-spacing: -0.3px;
+}
+
+.payslip-subtitle {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #788596;
+  font-weight: 600;
+}
+
+.payslip-logo-box {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 42px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.payslip-logo {
+  width: 32px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.payslip-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: #ffffff;
+  border: 1px solid #8f9aa5;
+  overflow: hidden;
+}
+
+.payslip-table th,
+.payslip-table td {
+  border: 1px solid #9da7b1;
+  text-align: center;
+  vertical-align: middle;
+  padding: 4px 5px;
+  font-size: 12px;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+.info-head th {
+  background: #dde4eb;
+  color: #22384e;
+  font-weight: 800;
+  padding: 10px 4px;
+  font-size: 12px;
+}
+
+.info-body td {
+  background: #fbfbfc;
+  color: #111827;
+  font-weight: 700;
+  padding: 10px 4px;
+}
+
+.block-title th {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  padding: 8px 4px;
+}
+
+.pay-block th {
+  background: linear-gradient(180deg, #0d4f8a 0%, #0b467c 100%);
+}
+
+.deduction-block th {
+  background: linear-gradient(180deg, #637986 0%, #586d79 100%);
+}
+
+.sub-head th {
+  background: #eef2f5;
+  color: #2f465d;
+  font-weight: 800;
+  font-size: 11.5px;
+  padding: 5px 4px;
+}
+
+.data-row td {
+  background: #ffffff;
+  color: #111827;
+  font-weight: 700;
+  padding: 4px 4px;
+}
+
+.single-title th {
+  background: #f3f5f7;
+  color: #29445e;
+  font-weight: 800;
+  padding: 4px;
+}
+
+.single-value td {
+  background: #ffffff;
+  color: #103e72;
+  font-size: 16px;
+  font-weight: 900;
+  padding: 6px 4px;
+}
+
+.summary-row th,
+.summary-row td {
+  background: #fafcfe;
+  font-weight: 800;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.summary-row th {
+  color: #22384e;
+  text-align: right;
+  padding-right: 12px;
+}
+
+.summary-row td {
+  color: #111827;
+  text-align: right;
+  padding-right: 12px;
+  font-weight: 900;
+}
+
+.summary-row.deduct-row th,
+.summary-row.deduct-row td {
+  color: #e24b34;
+  background: #fff8f6;
+}
+
+.final-row th,
+.final-row td {
+  background: linear-gradient(180deg, #eef6ff 0%, #e7f1fc 100%);
+  color: #0d4b82;
+  font-weight: 900;
+  font-size: 15px;
+  padding: 8px 8px;
+}
+
+.final-row th {
+  text-align: right;
+  padding-right: 12px;
+}
+
+.final-row td {
+  text-align: right;
+  padding-right: 12px;
+}
+
+.payslip-footer {
+  margin-top: 16px;
+}
+
+.payslip-company-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-name {
+  font-size: 15px;
+  font-weight: 900;
+  color: #153d6a;
+  letter-spacing: 0.22em;
+}
+
+/* 통합 근로계약서 */
+
+.contract-page-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 14px 34px rgba(19, 51, 84, 0.1);
+  padding: 22px 24px 20px;
+  border: 1px solid rgba(184, 202, 220, 0.45);
+  margin-top: 18px;
+}
+
+.contract-page-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contract-page-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #16324f;
+  margin-bottom: 8px;
+}
+
+.contract-page-subtext {
+  font-size: 14px;
+  color: #6b7f95;
+}
+
+.contract-top-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contract-top-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.contract-top-btn.light {
+  background: #eef4fa;
+  color: #16324f;
+}
+
+.contract-section-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #16324f;
+  margin-bottom: 14px;
+}
+
+.contract-action-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.contract-search-input {
+  width: 180px;
+}
+
+.contract-action-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 11px 16px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.contract-action-btn.blue {
+  background: #2f6fe4;
+  color: #fff;
+}
+
+.contract-action-btn.navy {
+  background: #0d1b34;
+  color: #fff;
+}
+
+.contract-action-btn.light {
+  background: #eef4fa;
+  color: #16324f;
+}
+
+.contract-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #cfdbe7;
+  background: #fff;
+}
+
+.contract-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+}
+
+.contract-table th,
+.contract-table td {
+  border: 1px solid #cfdbe7;
+  padding: 12px 10px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #1f2f44;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+.contract-table th {
+  background: #eef4fa;
+  font-weight: 800;
+  color: #16324f;
+}
+
+.contract-table td:nth-child(6),
+.contract-table td:nth-child(7) {
+  text-align: left;
+}
+
+.contract-empty-cell {
+  height: 80px;
+  color: #6a7f94;
+  font-weight: 700;
+}
+
+.contract-view-btn {
+  border: none;
+  border-radius: 14px;
+  padding: 10px 14px;
+  background: #0d1b34;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  min-width: 56px;
+}
+
+/* 근로계약서 상세 */
+
+.contract-detail-wrap {
+  margin-top: 18px;
+}
+
+.contract-detail-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.contract-detail-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #16324f;
+}
+
+.contract-detail-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contract-paper {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #cfdbe7;
+  padding: 18px 20px;
+  box-sizing: border-box;
+}
+
+.contract-paper-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+.contract-paper-sub {
+  font-size: 13px;
+  color: #1f2937;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.contract-info-list {
+  margin-bottom: 14px;
+}
+
+.contract-info-row {
+  display: flex;
+  border-bottom: 1px solid #222;
+  padding: 6px 0;
+  gap: 10px;
+}
+
+.contract-info-label {
+  width: 180px;
+  flex: 0 0 180px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.contract-info-value {
+  flex: 1;
+  font-size: 14px;
+  color: #111827;
+  line-height: 1.5;
+}
+
+.contract-info-value.strong {
+  font-weight: 800;
+}
+
+.contract-pay-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+  margin: 12px 0 10px;
+}
+
+.contract-pay-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin-bottom: 14px;
+}
+
+.contract-pay-table th,
+.contract-pay-table td {
+  border: 1px solid #cfd5dd;
+  padding: 8px 6px;
+  text-align: center;
+  font-size: 13px;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+.contract-pay-table th {
+  background: #eef2f7;
+  font-weight: 800;
+}
+
+.contract-pay-table .red {
+  color: #d62828;
+  font-weight: 800;
+}
+
+.contract-pay-total-row td {
+  background: #fff5cc;
+  font-weight: 800;
+}
+
+.contract-terms-box {
+  border: 1px solid #d8e0e8;
+  margin-bottom: 16px;
+}
+
+.contract-terms-row {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e4ebf2;
+  font-size: 13px;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+.contract-terms-row:last-child {
+  border-bottom: none;
+}
+
+.contract-confirm-text {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+  color: #16324f;
+  margin-top: 20px;
+}
+
+.contract-confirm-date {
+  text-align: center;
+  font-size: 14px;
+  color: #16324f;
+  margin: 6px 0 18px;
+}
+
+.contract-sign-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contract-sign-box {
+  border: 1px solid #cfdbe7;
+  padding: 14px;
+  min-height: 150px;
+}
+
+.contract-sign-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.contract-sign-line {
+  font-size: 13px;
+  color: #1f2937;
+  line-height: 1.7;
+}
+
+.contract-sign-stamp-area {
+  position: relative;
+  min-height: 64px;
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.contract-company-stamp {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 78px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+.contract-sign-stamp {
+  position: relative;
+  z-index: 1;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 800;
+  color: #111827;
+}
+
+/* 반응형 */
+
+@media (max-width: 768px) {
+  .app-shell {
+    padding: 20px 10px 30px;
+  }
+
+  .login-header-blue {
+    border-radius: 24px;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .header-main {
+    font-size: 26px;
+  }
+
+  .header-bottom {
+    font-size: 18px;
+  }
+
+  .login-header-logo {
+    width: 96px;
+  }
+
+  .card {
+    border-radius: 22px;
+    padding: 18px;
+  }
+
+  .login-select-title {
+    font-size: 21px;
+  }
+
+  .login-type-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .login-type-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 21px;
+  }
+
+  .login-type-title {
+    font-size: 16px;
+  }
+
+  .login-type-desc {
+    font-size: 12px;
+  }
+
+  .top-card {
+    padding: 14px;
+  }
+
+  .top-card-header-row {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .top-logo {
+    width: 42px;
+  }
+
+  .top-title-area.compact h1 {
+    font-size: 15px;
+  }
+
+  .top-title-area.compact .sub-text {
+    font-size: 10px;
+  }
+
+  .top-button-grid {
+    gap: 10px;
+  }
+
+  .top-button-grid .tab-btn,
+  .top-button-grid .outline-btn {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .admin-top-title {
+    font-size: 15px;
+  }
+
+  .admin-top-logo {
+    width: 42px;
+  }
+
+  .admin-top-button-grid {
+    gap: 10px;
+  }
+
+  .admin-top-button-grid .tab-btn,
+  .admin-top-button-grid .outline-btn {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .admin-menu-grid {
+    gap: 14px 10px;
+  }
+
+  .admin-menu-card {
+    min-height: 116px;
+    font-size: 15px;
+    border-radius: 16px;
+  }
+
+  .gongsu-title {
+    font-size: 22px;
+  }
+
+  .calendar-cell {
+    min-height: 82px;
+    padding: 8px 6px;
+  }
+
+  .calendar-value {
+    font-size: 17px;
+  }
+
+  .admin-content-title {
+    font-size: 18px;
+  }
+
+  .admin-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-action-btn {
+    width: 100%;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    font-size: 12px;
+    padding: 10px 8px;
+  }
+
+  .mini-calendar-cell {
+    min-height: 44px;
+  }
+
+  .mini-day,
+  .mini-value,
+  .mini-week-name {
+    font-size: 10px;
+  }
+
+  .payslip-sheet {
+    padding: 16px 14px 16px;
+    border-radius: 20px;
+  }
+
+  .payslip-head {
+    min-height: 60px;
+    margin-bottom: 12px;
+  }
+
+  .payslip-head-center {
+    padding: 0 42px;
+  }
+
+  .payslip-title {
+    font-size: 17px;
+  }
+
+  .payslip-subtitle {
+    font-size: 11px;
+  }
+
+  .payslip-logo {
+    width: 28px;
+  }
+
+  .payslip-table th,
+  .payslip-table td {
+    font-size: 11px;
+    padding: 4px 3px;
+  }
+
+  .single-value td {
+    font-size: 14px;
+  }
+
+  .final-row th,
+  .final-row td {
+    font-size: 13px;
+  }
+
+  .company-name {
+    font-size: 14px;
+    letter-spacing: 0.14em;
+  }
+
+  .contract-page-card {
+    padding: 18px 16px;
+  }
+
+  .contract-page-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contract-page-title {
+    font-size: 22px;
+  }
+
+  .contract-section-title {
+    font-size: 17px;
+  }
+
+  .contract-action-row {
+    justify-content: flex-start;
+  }
+
+  .contract-search-input {
+    width: 100%;
+  }
+
+  .contract-table th,
+  .contract-table td {
+    font-size: 12px;
+    padding: 10px 8px;
+  }
+
+  .contract-view-btn {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .contract-paper {
+    padding: 14px;
+  }
+
+  .contract-paper-title {
+    font-size: 20px;
+    letter-spacing: 0.2em;
+  }
+
+  .contract-info-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contract-info-label {
+    width: 100%;
+    flex: none;
+  }
+
+  .contract-pay-table th,
+  .contract-pay-table td {
+    font-size: 11px;
+    padding: 6px 4px;
+  }
+
+  .contract-sign-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .login-header-blue {
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .header-main {
+    font-size: 22px;
+  }
+
+  .header-bottom {
+    font-size: 16px;
+  }
+
+  .login-header-logo {
+    width: 82px;
+  }
+
+  .login-select-subtext {
+    font-size: 13px;
+  }
+
+  .login-type-card {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .login-type-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 19px;
+    border-radius: 14px;
+  }
+
+  .login-type-title {
+    font-size: 15px;
+  }
+
+  .login-type-desc {
+    font-size: 11px;
+  }
+
+  .calendar-week-header,
+  .calendar-grid {
+    gap: 4px;
+  }
+
+  .calendar-cell {
+    min-height: 72px;
+    border-radius: 10px;
+  }
+
+  .calendar-day {
+    font-size: 12px;
+  }
+
+  .calendar-label {
+    font-size: 10px;
+  }
+
+  .calendar-value {
+    font-size: 15px;
+  }
+
+  .mini-calendar-cell {
+    min-height: 40px;
+  }
+
+  .mini-value,
+  .mini-day,
+  .mini-week-name {
+    font-size: 10px;
+  }
+
+  .pin-btn-group {
+    flex-direction: column;
+  }
+
+  .pin-btn-group .primary-btn,
+  .pin-btn-group .outline-btn {
+    width: 100%;
+  }
+
+  .payslip-sheet {
+    padding: 14px 10px 14px;
+  }
+
+  .payslip-head-center {
+    padding: 0 34px;
+  }
+
+  .payslip-title {
+    font-size: 16px;
+  }
+
+  .payslip-subtitle {
+    font-size: 10px;
+  }
+
+  .payslip-logo {
+    width: 24px;
+  }
+
+  .payslip-table th,
+  .payslip-table td {
+    font-size: 10px;
+    padding: 4px 2px;
+  }
+
+  .single-value td,
+  .final-row th,
+  .final-row td {
+    font-size: 12px;
+  }
+
+  .company-name {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* 인쇄 */
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .app-shell {
+    background: #fff;
+    padding: 0;
+  }
+
+  .card,
+  .payslip-sheet,
+  .contract-page-card,
+  .contract-paper {
+    box-shadow: none !important;
+  }
+
+  .primary-btn,
+  .outline-btn,
+  .tab-btn,
+  .policy-toggle-btn,
+  .back-btn,
+  .no-print {
+    display: none !important;
+  }
+
+  .payslip-sheet {
+    border: 1px solid #9aa6b2;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .payslip-wrap {
+    max-width: 100%;
+  }
+}
+/* 요약행과 최종행의 제목(th)과 숫자(td) 모두 강제 가운데 정렬 */
+.summary-row th,
+.summary-row td,
+.final-row th,
+.final-row td {
+  text-align: center !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important; /* 왼쪽 여백도 제거 */
+  display: table-cell !important;
+}
+.payslip-sheet {
+  font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+@media (max-width: 480px) {
+  .calendar-week-header {
+    gap: 2px;
+  }
+
+  .calendar-grid {
+    gap: 2px;
+  }
+
+  .calendar-cell {
+    min-height: 60px;
+    padding: 2px;
+  }
+
+  .calendar-day {
+    font-size: 11px;
+  }
+
+  .calendar-label {
+    font-size: 9px;
+  }
+
+  .calendar-value {
+    font-size: 11px;
+  }
+}
