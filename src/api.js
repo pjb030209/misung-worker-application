@@ -1,6 +1,6 @@
 // src/api.js
 
-export const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzDM5pSI7Zrwd6io3nHsWRMY852IgMNkWTERDt2ieZ81OFjR77gbU50SPVMRK2_T0I/exec";
+export const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby78RJHVLweNzEiOHOvtFXwfX3am3YhsBrxt4ruIT3pOML8sd2atYsCSEbeXeakukOs/exec";
 
 /**
  * 백엔드 응답 형태 통일
